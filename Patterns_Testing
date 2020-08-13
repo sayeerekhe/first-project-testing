@@ -1,0 +1,123 @@
+import java.util.*;
+public class Patterns1
+{
+public void main()
+    {
+       Scanner sc = new Scanner(System.in);
+       int flag = 1;
+       do
+       {
+       System.out.println("Enter a for star pattern \n b for Star Triangle \n c for Inverted Star Triangle \n d for Number Triangle \n e for Inverted Number Triangle");
+       System.out.println("f for No.Squares Pattern \n g for Descending No Pattern \n h for @-# pattern \n i for @-# Pattern2 \n j for Mirror Pattern");
+       char ch = sc.next().charAt(0);
+       System.out.println("Enter number of terms");
+       int n = sc.nextInt();
+        
+       switch(ch)
+       {
+            case 'a':
+            case 'A':for(int i=1; i<=n; i++)
+        {
+            for(int j=1; j<=n; j++)
+              System.out.print("*");
+                System.out.println();
+         }
+            break;
+            case 'b':
+            case 'B':for(int i=1; i<=n; i++)
+        {
+            for(int j=1; j<=i; j++)
+            System.out.print("*");
+            System.out.println();
+        }
+            break;
+            case 'c':
+            case 'C':for(int i=n; i>=1; i--)
+        {
+            for(int j=1; j<=i;j++)
+            System.out.print("*");
+            System.out.println();
+        }
+        break;
+            case 'd':
+            case 'D':for(int i=1; i<=n; i++)
+        {
+            for(int j=1; j<=i; j++)
+            System.out.print(i);
+            System.out.println();
+        }
+            break;
+            case 'e':
+            case 'E':for(int i=n; i>=1; i--)
+         {
+             for(int j=1; j<= i; j++)
+             System.out.print(j);
+             System.out.println();
+         }
+         break;
+            case 'f':
+            case 'F':for(int i= 1; i<=n; i++)
+        {
+            for(int j=1; j<=i; j++)
+              System.out.print(j*j+" ");
+            System.out.println();
+        }
+            break;
+            case 'g':
+            case 'G':for(int i=n; i>=1;i--)
+         {
+           for(int j=i; j>=1; j--)
+             System.out.print(j);
+           System.out.println();
+        }  
+            break;
+            case 'h':
+            case 'H':for(int i=1; i<=n; i++)
+        {
+            for(int j=1; j<=n; j++)
+            {
+                if(j%2==0)
+                System.out.print("@");
+                else
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+            break;
+            case 'i':
+            case 'I':for(int i=1; i<=n; i++)
+        {
+            for(int j=1; j<=n; j++)
+            {
+                if(i%2==0)
+                System.out.print("@");
+                else
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+            break;
+            case 'j':
+            case 'J':for (int i= 0; i<= n-1 ; i++)
+        {
+            for (int j=0; j<=i; j++) { System.out.print("*"+ " "); 
+            } 
+            System.out.println(""); } 
+            for (int i=n-1; i>=0; i--)
+        {
+            for(int j=0; j <= i-1;j++)
+            {
+                System.out.print("*"+ " ");
+            }
+            System.out.println("");
+        }
+            break;
+            default: System.out.println("Invalid choice");
+        }
+        System.out.println("Input 1 to continue, 0 to exit");
+        flag= sc.nextInt();
+        
+    }while(flag==1);
+               
+    }
+}
